@@ -159,6 +159,7 @@ class RedisClientMutablePool(
     refreshConnections()
   }
 
+  refreshConnections()
 }
 
 class RedisClientPool(redisServers: Seq[RedisServer], val name: String = "RedisClientPool")(
