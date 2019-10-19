@@ -78,11 +78,7 @@ class ServerSpec extends RedisStandaloneServer {
     }
 
     "LASTSAVE" in {
-<<<<<<< HEAD
       redis.lastsave().futureValue should be >= 0L
-=======
-      Await.result(redis.lastsave(), timeOut) must be_>=(0L)
->>>>>>> Scala 2.13.0
     }
 
     "SAVE" in {

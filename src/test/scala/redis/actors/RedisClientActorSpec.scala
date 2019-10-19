@@ -61,8 +61,8 @@ class RedisClientActorSpec extends TestKit(ActorSystem()) with TestBase with Imp
 
       //onConnectWrite
       redisClientActor.underlyingActor.onConnectWrite()
-      awaitAssert(redisClientActor.underlyingActor.queuePromises.toSeq mustEqual Seq(opConnectPing, opConnectGet, op1, op2))
-      awaitAssert(redisClientActor.underlyingActor.queuePromises.length mustEqual 4)
+      awaitAssert(redisClientActor.underlyingActor.queuePromises.toSeq shouldBe Seq(opConnectPing, opConnectGet, op1, op2))
+      awaitAssert(redisClientActor.underlyingActor.queuePromises.length shouldBe 4)
 
       //onWriteSent
       redisClientActor.underlyingActor.onWriteSent()

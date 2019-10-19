@@ -5,8 +5,6 @@ import java.net.Socket
 import java.io.IOException
 import java.net.ServerSocket
 
-// import java.nio.file.Files
-import java.util.concurrent.atomic.AtomicInteger
 
 import akka.actor.ActorSystem
 import akka.testkit.TestKit

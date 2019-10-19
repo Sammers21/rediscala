@@ -35,9 +35,14 @@ lazy val common = Seq(
     Seq(
       "com.typesafe.akka" %% "akka-actor" % akkaVersion,
       "com.typesafe.akka" %% "akka-testkit" % akkaVersion % Test,
-      "org.specs2" %% "specs2-core" % "4.5.1" % Test,
-      "org.scala-stm" %% "scala-stm" % "0.9.1",
-      "org.scalacheck" %% "scalacheck" % "1.14.0" % Test
+      "de.heikoseeberger"        %% "akka-log4j"      % "1.6.1" % Test,
+      "org.scalatest"            %% "scalatest"       % "3.0.5" % Test,
+      "org.scalacheck"           %% "scalacheck"      % "1.14.0" % Test,
+      "org.apache.logging.log4j" % "log4j-api"        % "2.11.2" % Test,
+      "org.apache.logging.log4j" % "log4j-core"       % "2.11.2" % Test,
+      "org.apache.logging.log4j" % "log4j-slf4j-impl" % "2.11.2" % Test,
+      "org.apache.logging.log4j" %% "log4j-api-scala" % "11.0" % Test,
+      "org.scala-stm" %% "scala-stm" % "0.9.1"
     )
   },
 

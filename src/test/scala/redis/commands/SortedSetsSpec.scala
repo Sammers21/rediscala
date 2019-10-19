@@ -103,13 +103,13 @@ class SortedSetsSpec extends RedisStandaloneServer {
         z2 <- redis.zadd("zpopminKey", (3, "three"), (2, "two"), (1, "one"))
         z2r <- redis.zpopmin("zpopminKey", 2)
       } yield {
-        z1 mustEqual 1
-        z1r mustEqual Seq(ByteString("one"), ByteString("1"))
-        z2 mustEqual 3
-        z2r mustEqual Seq(ByteString("one"), ByteString("1"), ByteString("two"), ByteString("2"))
+        z1 shouldBe 1
+        z1r shouldBe Seq(ByteString("one"), ByteString("1"))
+        z2 shouldBe 3
+        z2r shouldBe Seq(ByteString("one"), ByteString("1"), ByteString("two"), ByteString("2"))
       }
 
-      Await.result(r, timeOut)
+      r.futureValue
     }
 
     "ZPOPMAX" in {
@@ -121,13 +121,14 @@ class SortedSetsSpec extends RedisStandaloneServer {
         z2 <- redis.zadd("zpopmaxKey", (3, "three"), (2, "two"), (1, "one"))
         z2r <- redis.zpopmax("zpopmaxKey", 2)
       } yield {
-        z1 mustEqual 1
-        z1r mustEqual Seq(ByteString("one"), ByteString("1"))
-        z2 mustEqual 3
-        z2r mustEqual Seq(ByteString("three"), ByteString("3"), ByteString("two"), ByteString("2"))
+        z1 shouldBe 1
+        z1r shouldBe Seq(ByteString("one"), ByteString("1"))
+        z2 shouldBe 3
+        z2r shouldBe Seq(ByteString("three"), ByteString("3"), ByteString("two"), ByteString("2"))
       }
 
-      Await.result(r, timeOut)
+
+      r.futureValue
     }
 
     "ZRANGE" in {

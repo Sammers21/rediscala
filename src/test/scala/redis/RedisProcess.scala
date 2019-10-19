@@ -15,7 +15,6 @@ object RedisProcess {
     def isAlive(): Boolean = { true }
   }
 }
-import RedisProcess._
 
 class RedisProcess(val port: Int) {
   protected var maybeServer: Option[Process] = None
