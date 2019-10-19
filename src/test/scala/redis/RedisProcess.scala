@@ -9,6 +9,8 @@ import scala.reflect.io.File
 import scala.sys.process.{Process, ProcessLogger}
 import scala.util.control.NonFatal
 
+import RedisProcess._
+
 object RedisProcess {
   //scala 2.11 doesn't have Process.isAlive
   implicit class ProcessExt(val self: Process) extends AnyVal {

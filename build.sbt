@@ -24,7 +24,6 @@ lazy val common = Seq(
     "-encoding", "UTF-8",
     "-Xlint",
     "-deprecation",
-    "-Xfatal-warnings",
     "-feature",
     "-language:postfixOps",
     "-unchecked"
