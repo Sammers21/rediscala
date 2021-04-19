@@ -1,7 +1,7 @@
 lazy val common = Seq(
   organization := "com.github.Ma27",
   publishTo := sonatypePublishTo.value,
-  scalaVersion := "2.12.11",
+  scalaVersion := "2.13.2",
   crossScalaVersions := Seq(scalaVersion.value, "2.11.12", "2.13.2"),
   licenses += ("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0.html")),
   homepage := Some(url("https://github.com/Ma27/rediscala")),
