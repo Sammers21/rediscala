@@ -68,7 +68,9 @@ class RedisReplyDecoder() extends Actor {
           operation.completeFailed(ReplyErrorException(error.toString))
         }
     } else {
-      operation.completeFailed(InvalidRedisReply)
+      operation.completeFailed(
+        new Exception(s"Could not decode the redis reply (Connection closed). Redis Protocol error: Got ${bs.head} as initial reply byte for Operation: $operation")
+      )
       throw new Exception(s"Redis Protocol error: Got ${bs.head} as initial reply byte for Operation: $operation")
     }
   }
