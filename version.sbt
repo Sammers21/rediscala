@@ -1,1 +1,1 @@
-version := "1.9.3-fix-sammers"
+version := "1.9.3-fix-sammers-SNAPSHOT"
